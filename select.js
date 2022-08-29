@@ -2,12 +2,13 @@ const element = document.getElementById("mybtn1");
 element.addEventListener("click", myFunction);
 
 function myFunction() {
-    var x = document.createElement("OL");
-    x.setAttribute("id", "myOl");
-    document.body.appendChild(x);
-
-    var y = document.createElement("LI");
-    var t = document.createTextNode("Coffee");
-    y.appendChild(t);
-    document.getElementById("myOl").appendChild(y);
+    const div = document.querySelector('.era')
+    const name = document.createElement('ol')
+    div.appendChild(name)
+    const add = document.createElement('li')
+    add.innerText = document.getElementById('mybtn1').parentNode.childNodes[3].innerText;
+    name.appendChild(add)
+    const button = document.querySelector('#mybtn1')
+    button.disabled = true
+    mybtn1.style.backgroundColor='lightblue'
 }
