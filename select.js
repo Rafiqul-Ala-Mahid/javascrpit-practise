@@ -8,7 +8,6 @@ function select(id) {
         add.innerText = count + '. ' + document.getElementById(id).parentNode.childNodes[3].innerText;
         name.appendChild(add)
     }
-    console.log(count)
 }
 
 let count=0
@@ -72,3 +71,23 @@ function myFunction6() {
         mybtn6.style.backgroundColor = 'lightblue'
     }
 }
+
+document.getElementById('cost-btn').addEventListener("click", function () {
+    const playerInputString = document.getElementById('per-cost').value
+    const playerInput=parseInt(playerInputString)
+    document.getElementById('per-cost').value = ''
+    const playerCost = playerInput * count
+    document.getElementById('player-cost').innerText=playerCost
+})
+
+document.getElementById('total-calculate').addEventListener("click", function () {
+    const managerInputString = document.getElementById('manager-cost').value
+    const managerInput = parseInt(managerInputString)
+    document.getElementById('manager-cost').value=''
+    const coachInputString = document.getElementById('coach-cost').value
+    const coachInput = parseInt(coachInputString)
+    document.getElementById('coach-cost').value=''
+    const totalPlayerCostString = document.getElementById('player-cost').innerText
+    const totalPlayerCost = parseInt(totalPlayerCostString)
+    document.getElementById('total-cost').innerText=totalPlayerCost+coachInput+managerInput
+})
