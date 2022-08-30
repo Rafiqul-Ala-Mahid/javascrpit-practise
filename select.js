@@ -9,7 +9,7 @@ function select(id) {
         name.appendChild(add)
     }
     else {
-        alert("Sorry! You can't select more.")
+        alert("Sorry! You can't select more than five.")
         count--
         a=false
     }
